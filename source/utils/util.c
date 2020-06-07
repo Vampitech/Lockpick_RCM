@@ -161,6 +161,12 @@ void reboot_rcm()
 		bpmp_halt();
 }
 
+void reboot_next()
+{
+	launch_payload("sd:/payload.bin");
+}
+
+
 void power_off()
 {
 	sd_unmount();
