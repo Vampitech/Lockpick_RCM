@@ -69,6 +69,7 @@ void usleep(u32 us);
 void msleep(u32 ms);
 void panic(u32 val);
 void reboot_normal();
+void reboot_next();
 void reboot_rcm();
 void power_off();
 void exec_cfg(u32 *base, const cfg_op_t *ops, u32 num_ops);
