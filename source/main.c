@@ -283,6 +283,7 @@ ment_t ment_top[] = {
 	MDEF_CAPTION("---------------", COLOR_BLUE),
 	MDEF_HANDLER("Reboot (Normal)", reboot_normal, COLOR_VIOLET),
 	MDEF_HANDLER("Reboot (RCM)", reboot_rcm, COLOR_RED),
+	MDEF_HANDLER("Reboot To NeXT", reboot_next, COLOR_RED),
 	MDEF_HANDLER("Power off", power_off, COLOR_ORANGE),
 	MDEF_END()
 };
