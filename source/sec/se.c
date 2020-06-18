@@ -230,6 +230,11 @@ void se_key_acc_ctrl(u32 ks, u32 flags)
 		SE(SE_KEY_TABLE_ACCESS_LOCK_OFFSET) &= ~(1 << ks);
 }
 
+u32 se_key_acc_ctrl_get(u32 ks)
+{
+	return SE(SE_KEY_TABLE_ACCESS_REG_OFFSET + 4 * ks);
+}
+
 void se_aes_key_set(u32 ks, const void *key, u32 size)
 {
 	u32 *data = (u32 *)key;
@@ -418,8 +423,8 @@ int se_aes_xts_crypt_sec(u32 ks1, u32 ks2, u32 enc, u64 sec, void *dst, const vo
 	u8 *tweak = (u8 *)malloc(0x10);
 	u8 *temptweak = (u8 *)malloc(0x10);
 	u32 *pdst = (u32 *)dst;
-    u32 *psrc = (u32 *)src;
-    u32 *ptweak = (u32 *)tweak;
+	u32 *psrc = (u32 *)src;
+	u32 *ptweak = (u32 *)tweak;
 
 	//Generate tweak.
 	for (int i = 0xF; i >= 0; i--)
